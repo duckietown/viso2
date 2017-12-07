@@ -4,14 +4,18 @@ project(libviso2)
 find_package(catkin REQUIRED )
 
 #set(CMAKE_CXX_FLAGS "-msse3")
-add_definitions(-msse3)
+#add_definitions(-msse3)
 
-option(ARM_CROSS_COMPILATION "ARM Cross Compilation" OFF)
+#option(ARM_CROSS_COMPILATION "ARM Cross Compilation" OFF)
 
-if(ARM_CROSS_COMPILATION)
-  SET(CMAKE_SYSTEM_PROCESSOR arm)
-  SET(CMAKE_CXX_FLAGS -mfpu=neon)
-endif(ARM_CROSS_COMPILATION)
+#if(ARM_CROSS_COMPILATION)
+SET(CMAKE_SYSTEM_PROCESSOR arm)
+SET(CMAKE_CXX_FLAGS -mfpu=neon)
+#endif(ARM_CROSS_COMPILATION)
+
+##set(NEON_FLAGS "-DENABLE_NEON -mfloat-abi=hard -mfpu=neon-vfpv4 -mcpu=cortex-a1$
+##set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS} -Wno-format-security ${NEON_$ ...
+##set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} ${NEON_FLAGS}")
 
 catkin_package(
   INCLUDE_DIRS libviso2/src
