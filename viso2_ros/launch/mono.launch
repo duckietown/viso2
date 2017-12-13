@@ -10,6 +10,7 @@
     <param name="camera_height" value="0.1" />
     <param name="camera_pitch" value="-0.15" />
     <param name="sensor_frame_id" value="$(arg veh)/camera_optical_frame"/>
+    <param name="ransac_iters" value="50"/>
   </node>
 
 </launch>
